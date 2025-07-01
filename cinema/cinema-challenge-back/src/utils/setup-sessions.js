@@ -143,7 +143,7 @@ const seedSessions = async () => {
       const theaterData = [
         { 
           name: 'Sala 1',
-          type: 'Standard',
+          type: 'standard',
           capacity: 80,
           features: ['2D', 'Comfortable Seats']
         },

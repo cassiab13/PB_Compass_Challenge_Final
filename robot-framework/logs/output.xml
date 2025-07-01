@@ -1,173 +1,177 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-06-30T17:19:50.547165" rpa="false" schemaversion="5">
+<robot generator="Robot 7.3.1 (Python 3.13.3 on win32)" generated="2025-07-01T16:16:46.527028" rpa="false" schemaversion="5">
 <suite id="s1" name="Tests" source="C:\Users\cassi\OneDrive\Área de Trabalho\Cinema-challenge\robot-framework\tests">
-<suite id="s1-s1" name="Auth" source="C:\Users\cassi\OneDrive\Área de Trabalho\Cinema-challenge\robot-framework\tests\auth">
-<suite id="s1-s1-s1" name="Profile" source="C:\Users\cassi\OneDrive\Área de Trabalho\Cinema-challenge\robot-framework\tests\auth\profile.robot">
-<test id="s1-s1-s1-t1" name="Should not update user empty name" line="58">
+<suite id="s1-s1" name="Pages" source="C:\Users\cassi\OneDrive\Área de Trabalho\Cinema-challenge\robot-framework\tests\pages">
+<suite id="s1-s1-s1" name="Movies" source="C:\Users\cassi\OneDrive\Área de Trabalho\Cinema-challenge\robot-framework\tests\pages\movies.robot">
+<test id="s1-s1-s1-t1" name="Should access infos movie" line="26">
 <kw name="Start Session" owner="base" type="SETUP">
 <kw name="New Browser" owner="Browser">
-<msg time="2025-06-30T17:19:50.880068" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\cassi\\OneDrive\\\u00c1rea de Trabalho\\Cinema-challenge\\robot-framework\\logs\\browser\\traces\\temp\\6be9ef0a-b9f4-4fea-b1c6-c9f9eeb94c55"}</msg>
-<msg time="2025-06-30T17:19:50.926394" level="INFO">Starting Browser process c:\Users\cassi\OneDrive\Área de Trabalho\Cinema-challenge\robot-framework\.venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:60745</msg>
-<msg time="2025-06-30T17:19:53.217170" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\cassi\\OneDrive\\Área de Trabalho\\Cinema-challenge\\robot-framework\\logs\\browser\\traces\\temp\\6be9ef0a-b9f4-4fea-b1c6-c9f9eeb94c55"}</msg>
+<msg time="2025-07-01T16:16:47.286337" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\cassi\\OneDrive\\\u00c1rea de Trabalho\\Cinema-challenge\\robot-framework\\logs\\browser\\traces\\temp\\5dd6812d-3d48-4cb6-ae11-fa47bad60783"}</msg>
+<msg time="2025-07-01T16:16:47.362409" level="INFO">Starting Browser process c:\Users\cassi\OneDrive\Área de Trabalho\Cinema-challenge\robot-framework\.venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:51835</msg>
+<msg time="2025-07-01T16:16:51.917466" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\cassi\\OneDrive\\Área de Trabalho\\Cinema-challenge\\robot-framework\\logs\\browser\\traces\\temp\\5dd6812d-3d48-4cb6-ae11-fa47bad60783"}</msg>
 <arg>browser=chromium</arg>
 <arg>headless=${False}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Create a new playwright Browser with specified options.</doc>
-<status status="PASS" start="2025-06-30T17:19:50.879117" elapsed="2.338411"/>
+<status status="PASS" start="2025-07-01T16:16:47.284171" elapsed="4.633686"/>
 </kw>
 <kw name="New Page" owner="Browser">
-<msg time="2025-06-30T17:19:54.854647" level="INFO">Successfully initialized new page object and opened url: http://localhost:3002</msg>
-<msg time="2025-06-30T17:19:54.854885" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<msg time="2025-07-01T16:16:54.243671" level="INFO">Successfully initialized new page object and opened url: http://localhost:3002</msg>
+<msg time="2025-07-01T16:16:54.244037" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
 <arg>${BASE_URL}</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Open a new Page.</doc>
-<status status="PASS" start="2025-06-30T17:19:53.217977" elapsed="1.637450"/>
+<status status="PASS" start="2025-07-01T16:16:51.918453" elapsed="2.326272"/>
 </kw>
-<status status="PASS" start="2025-06-30T17:19:50.878156" elapsed="3.977610"/>
+<status status="PASS" start="2025-07-01T16:16:47.282113" elapsed="6.963126"/>
 </kw>
-<kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2025-06-30T17:19:54.857350" level="INFO">${user} = {'name': 'UserToUpdate', 'email': 'usertoupdate@gmail.com', 'password': 'new123456'}</msg>
-<var>${user}</var>
-<arg>name=UserToUpdate</arg>
-<arg>email=usertoupdate@gmail.com</arg>
-<arg>password=new123456</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2025-06-30T17:19:54.856424" elapsed="0.000982"/>
-</kw>
-<kw name="Reset user in database" owner="database">
-<msg time="2025-06-30T17:19:54.950094" level="INFO">Resetting user: usertoupdate@gmail.com
-User removed from database
-User reset completed.</msg>
-<arg>${user}</arg>
-<status status="PASS" start="2025-06-30T17:19:54.857802" elapsed="0.092416"/>
-</kw>
-<kw name="Go to login page" owner="Login">
+<kw name="Go to movie page" owner="Movie">
 <kw name="Go To" owner="Browser">
-<msg time="2025-06-30T17:19:55.132724" level="INFO">Successfully opened URL http://localhost:3002/login</msg>
-<arg>${BASE_URL}/login</arg>
+<msg time="2025-07-01T16:16:54.568971" level="INFO">Successfully opened URL http://localhost:3002/movies</msg>
+<arg>${BASE_URL}/movies</arg>
 <tag>BrowserControl</tag>
 <tag>Setter</tag>
 <doc>Navigates to the given ``url``.</doc>
-<status status="PASS" start="2025-06-30T17:19:54.951601" elapsed="0.181419"/>
+<status status="PASS" start="2025-07-01T16:16:54.248905" elapsed="0.320473"/>
 </kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-06-30T17:19:55.226569" level="INFO">Waited for Element with selector xpath=//p[contains(text(), 'Entre com suas credenciais para acessar sua conta')] at state visible</msg>
-<arg>${LOGIN_MESSAGE}</arg>
-<arg>visible</arg>
-<arg>5</arg>
-<tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-06-30T17:19:55.133367" elapsed="0.093376"/>
+<status status="PASS" start="2025-07-01T16:16:54.247450" elapsed="0.322229"/>
 </kw>
-<status status="PASS" start="2025-06-30T17:19:54.950794" elapsed="0.276085"/>
-</kw>
-<kw name="Submit login" owner="Login">
-<kw name="Fill Text" owner="Browser">
-<msg time="2025-06-30T17:19:55.228593" level="INFO">Fills the text 'usertoupdate@gmail.com' in the given field.</msg>
-<arg>css=#email</arg>
-<arg>${user}[email]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-06-30T17:19:55.227851" elapsed="0.040644"/>
-</kw>
-<kw name="Fill Text" owner="Browser">
-<msg time="2025-06-30T17:19:55.269484" level="INFO">Fills the text 'new123456' in the given field.</msg>
-<arg>css=#password</arg>
-<arg>${user}[password]</arg>
-<tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-06-30T17:19:55.268724" elapsed="0.020573"/>
-</kw>
+<kw name="Click on details movie" owner="Movie">
 <kw name="Click" owner="Browser">
-<msg time="2025-06-30T17:19:55.290659" level="INFO">Clicks the element 'css=button[type=submit] &gt;&gt; text=Entrar'.</msg>
-<arg>${LOGIN_BUTTON}</arg>
+<msg time="2025-07-01T16:16:54.573784" level="INFO">Clicks the element 'xpath=//*[@id="root"]/main/div/div[2]/div[1]/div[2]/a'.</msg>
+<arg>xpath=//*[@id="root"]/main/div/div[2]/div[1]/div[2]/a</arg>
 <tag>PageContent</tag>
 <tag>Setter</tag>
 <doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-06-30T17:19:55.289692" elapsed="0.097325"/>
+<status status="PASS" start="2025-07-01T16:16:54.571661" elapsed="0.684930"/>
 </kw>
-<arg>${user}</arg>
-<status status="PASS" start="2025-06-30T17:19:55.227266" elapsed="0.159885"/>
+<status status="PASS" start="2025-07-01T16:16:54.570390" elapsed="0.686638"/>
 </kw>
-<kw name="Click on profile" owner="Profile">
-<kw name="Click" owner="Browser">
-<msg time="2025-06-30T17:19:55.388619" level="INFO">Clicks the element 'css=a[href="/profile"]'.</msg>
-<arg>${PROFILE_LINK}</arg>
+<kw name="Verify infos from movie" owner="Movie">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Element" owner="Browser">
+<msg time="2025-07-01T16:16:55.421455" level="INFO">Locator found successfully.</msg>
+<arg>.movie-meta</arg>
+<tag>Getter</tag>
 <tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-06-30T17:19:55.388027" elapsed="0.485525"/>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-07-01T16:16:55.261001" elapsed="0.161192"/>
 </kw>
-<status status="PASS" start="2025-06-30T17:19:55.387528" elapsed="0.486300"/>
+<msg time="2025-07-01T16:16:55.423440" level="INFO">${has_movie_meta} = True</msg>
+<var>${has_movie_meta}</var>
+<arg>Browser.Get Element</arg>
+<arg>.movie-meta</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-07-01T16:16:55.259986" elapsed="0.163574"/>
 </kw>
-<kw name="Fill profile name and save" owner="Profile">
-<kw name="Fill Text" owner="Browser">
-<msg time="2025-06-30T17:19:55.877231" level="INFO">Fills the text '''' in the given field.</msg>
-<arg>${INPUT_NAME}</arg>
-<arg>${name}</arg>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_movie_meta}</arg>
+<arg>Este card não possui .movie-meta</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-07-01T16:16:55.424033" elapsed="0.001240"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Element" owner="Browser">
+<msg time="2025-07-01T16:16:55.449779" level="INFO">Locator found successfully.</msg>
+<arg>.movie-genres</arg>
+<tag>Getter</tag>
 <tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
-<status status="PASS" start="2025-06-30T17:19:55.875695" elapsed="0.029212"/>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-07-01T16:16:55.427232" elapsed="0.022918"/>
 </kw>
-<kw name="Click" owner="Browser">
-<msg time="2025-06-30T17:19:55.905846" level="INFO">Clicks the element 'css=button[type=submit] &gt;&gt; text=Salvar alterações'.</msg>
-<arg>${SALVAR_ALTERACOES_BTN}</arg>
+<msg time="2025-07-01T16:16:55.450565" level="INFO">${has_movie_genres} = True</msg>
+<var>${has_movie_genres}</var>
+<arg>Browser.Get Element</arg>
+<arg>.movie-genres</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-07-01T16:16:55.425782" elapsed="0.024884"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_movie_genres}</arg>
+<arg>Este card não possui .movie-genres</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-07-01T16:16:55.451094" elapsed="0.000945"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Element" owner="Browser">
+<msg time="2025-07-01T16:16:55.477446" level="INFO">Locator found successfully.</msg>
+<arg>.movie-director</arg>
+<tag>Getter</tag>
 <tag>PageContent</tag>
-<tag>Setter</tag>
-<doc>Simulates mouse click on the element found by ``selector``.</doc>
-<status status="PASS" start="2025-06-30T17:19:55.905162" elapsed="0.069922"/>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-07-01T16:16:55.453851" elapsed="0.023986"/>
 </kw>
-<arg>''</arg>
-<status status="PASS" start="2025-06-30T17:19:55.874569" elapsed="0.100660"/>
+<msg time="2025-07-01T16:16:55.478199" level="INFO">${has_movie_director} = True</msg>
+<var>${has_movie_director}</var>
+<arg>Browser.Get Element</arg>
+<arg>.movie-director</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-07-01T16:16:55.452594" elapsed="0.025689"/>
 </kw>
-<kw name="Wait For Elements State" owner="Browser">
-<msg time="2025-06-30T17:19:55.985229" level="INFO">Waited for Element with selector xpath=//h1[contains(text(), 'Meu Perfil')] at state visible</msg>
-<arg>${PROFILE_MESSAGE}</arg>
-<arg>visible</arg>
-<arg>5s</arg>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_movie_director}</arg>
+<arg>Este card não possui .movie-director</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-07-01T16:16:55.478718" elapsed="0.002191"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Get Element" owner="Browser">
+<msg time="2025-07-01T16:16:55.512102" level="INFO">Locator found successfully.</msg>
+<arg>.movie-synopsis</arg>
+<tag>Getter</tag>
 <tag>PageContent</tag>
-<tag>Wait</tag>
-<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
-<status status="PASS" start="2025-06-30T17:19:55.975658" elapsed="0.009760"/>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2025-07-01T16:16:55.482511" elapsed="0.030111"/>
+</kw>
+<msg time="2025-07-01T16:16:55.513302" level="INFO">${has_movie_synopsis} = True</msg>
+<var>${has_movie_synopsis}</var>
+<arg>Browser.Get Element</arg>
+<arg>.movie-synopsis</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-07-01T16:16:55.481593" elapsed="0.031834"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${has_movie_synopsis}</arg>
+<arg>Este card não possui .movie-synopsis</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2025-07-01T16:16:55.514388" elapsed="0.001347"/>
+</kw>
+<status status="PASS" start="2025-07-01T16:16:55.258398" elapsed="0.257719"/>
 </kw>
 <kw name="Take Screenshot" owner="Browser" type="TEARDOWN">
-<msg time="2025-06-30T17:19:56.188815" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
+<msg time="2025-07-01T16:16:56.177005" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"/&gt;&lt;/a&gt;</msg>
 <tag>PageContent</tag>
 <doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
-<status status="PASS" start="2025-06-30T17:19:55.985922" elapsed="0.203052"/>
+<status status="PASS" start="2025-07-01T16:16:55.517525" elapsed="0.660246"/>
 </kw>
-<msg time="2025-06-30T17:19:56.206991" level="INFO">Switching context to context=fc0053e2-6047-4832-9ed8-60031d6ae705 in CURRENT</msg>
-<msg time="2025-06-30T17:19:56.218496" level="INFO">Successfully changed active context: context=fc0053e2-6047-4832-9ed8-60031d6ae705</msg>
-<msg time="2025-06-30T17:19:56.302262" level="INFO">Successfully closed Context</msg>
-<tag>AUTH-004</tag>
-<tag>CIN29</tag>
-<status status="PASS" start="2025-06-30T17:19:50.876993" elapsed="5.312819"/>
+<msg time="2025-07-01T16:16:56.233991" level="INFO">Switching context to context=52ab37fd-501b-4286-9c6f-d1232448a3c2 in CURRENT</msg>
+<msg time="2025-07-01T16:16:56.263362" level="INFO">Successfully changed active context: context=52ab37fd-501b-4286-9c6f-d1232448a3c2</msg>
+<msg time="2025-07-01T16:16:56.425245" level="INFO">Successfully closed Context</msg>
+<tag>CIN109</tag>
+<tag>MOVIE-002</tag>
+<status status="PASS" start="2025-07-01T16:16:47.280632" elapsed="8.898230"/>
 </test>
 <doc>Cenários de testes do profile de usuário</doc>
-<status status="PASS" start="2025-06-30T17:19:50.581204" elapsed="5.726078"/>
+<status status="PASS" start="2025-07-01T16:16:46.591083" elapsed="9.885483"/>
 </suite>
-<status status="PASS" start="2025-06-30T17:19:50.579399" elapsed="5.736369"/>
+<status status="PASS" start="2025-07-01T16:16:46.587348" elapsed="9.909187"/>
 </suite>
-<status status="PASS" start="2025-06-30T17:19:50.548819" elapsed="5.767880"/>
+<status status="PASS" start="2025-07-01T16:16:46.530822" elapsed="9.969561"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">AUTH-004</stat>
-<stat pass="1" fail="0" skip="0">CIN29</stat>
+<stat pass="1" fail="0" skip="0">CIN109</stat>
+<stat pass="1" fail="0" skip="0">MOVIE-002</stat>
 </tag>
 <suite>
 <stat name="Tests" id="s1" pass="1" fail="0" skip="0">Tests</stat>
-<stat name="Auth" id="s1-s1" pass="1" fail="0" skip="0">Tests.Auth</stat>
-<stat name="Profile" id="s1-s1-s1" pass="1" fail="0" skip="0">Tests.Auth.Profile</stat>
+<stat name="Pages" id="s1-s1" pass="1" fail="0" skip="0">Tests.Pages</stat>
+<stat name="Movies" id="s1-s1-s1" pass="1" fail="0" skip="0">Tests.Pages.Movies</stat>
 </suite>
 </statistics>
 <errors>

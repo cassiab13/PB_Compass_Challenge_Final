@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation        Elementos e ações na página de login
+Documentation        Elementos e ações na página de profile
 
 Resource             ../base.resource
 

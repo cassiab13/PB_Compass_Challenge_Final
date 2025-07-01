@@ -55,7 +55,7 @@ Element email should be disable
     ${is_disabled}=    Get Attribute    css=#email    disabled
     Should Be Empty    ${is_disabled}
 
-Should not update user empty name
+Should not update user with empty name
     [Tags]         AUTH-004    CIN29
     ${user}        Create Dictionary    
     ...            name=UserToUpdate

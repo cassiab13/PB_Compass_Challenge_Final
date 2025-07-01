@@ -17,3 +17,7 @@ ${INPUT_EMAIL}                css=#email
 
 ${SALVAR_ALTERACOES_BTN}      css=button[type=submit] >> text=Salvar alterações
 ${MODAL_OK_BUTTON}            css=.success-modal-overlay button.btn.btn-primary
+
+${VER_DETALHES_BTN}           xpath=//*[@id="root"]/main/div/div[2]/div/div[1]/div[2]/a
+
+${SELECIONAR_ASSENTOS_BTN}    css=.movie-info .sessions-container div:nth-child(1) div:nth-child(1) a

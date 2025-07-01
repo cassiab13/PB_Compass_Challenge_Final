@@ -81,7 +81,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r ./robot-framework/requirements.txt
 
-    - name: Initialize Robot Framework Browser (if used)
+    - name: Initialize Robot Framework Browser
       run: rfbrowser init
 
     - name: Run Robot Framework tests
@@ -89,13 +89,13 @@ jobs:
 
     # Upload results
     - name: Upload Postman results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: postman-results
         path: postman-results.xml
 
     - name: Upload Robot Framework results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: robotframework-results
         path: output.xml, log.html, report.html

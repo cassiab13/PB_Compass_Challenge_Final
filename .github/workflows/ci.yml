@@ -25,10 +25,18 @@ jobs:
         echo "PORT=3000" > .env
         echo "MONGODB_URI=mongodb://localhost:27017/cinema-app" >> .env
 
-    - name: Seed backend database
+    - name: Seed backend database with movies
       working-directory: cinema/cinema-challenge-back
-      run: npm run seed
+      run: node src/utils/setup-movies-db.js
 
+    - name: Seed backend database with test-users
+      working-directory: cinema/cinema-challenge-back
+      run: node src/utils/setup-test-users.js
+
+    - name: Seed backend database with more movies
+      working-directory: cinema/cinema-challenge-back
+      run: node src/utils/seedMoreMovies.js
+      
     - name: Start backend
       working-directory: cinema/cinema-challenge-back
       run: |

@@ -6,15 +6,14 @@ on:
   pull_request:
     branches: [ main ]
 
+
 jobs:
   tests:
     runs-on: ubuntu-latest
-    
     env:
        PORT: ${{ PORT }}
        MONGODB_URI: ${{  MONGODB_URI }}
-       JWT_SECRET: ${{  JWT_SECRET  }}
-       
+       JWT_SECRET: ${{  JWT_SECRET  }}       
     services:
       mongo:
         image: mongo:6

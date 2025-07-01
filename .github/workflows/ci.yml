@@ -10,7 +10,7 @@ jobs:
   tests:
     runs-on: ubuntu-latest
     env:
-       PORT: ${{secrets.PORT}}
+       PORT: ${{ secrets.PORT }}
        MONGODB_URI: ${{secrets.MONGODB_URI}}
        JWT_SECRET: ${{secrets.JWT_SECRET}}       
     services:

@@ -9,7 +9,12 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-
+    
+    env:
+       PORT: ${{ PORT }}
+       MONGODB_URI: ${{  MONGODB_URI }}
+       JWT_SECRET: ${{  JWT_SECRET  }}
+       
     services:
       mongo:
         image: mongo:6
@@ -30,11 +35,6 @@ jobs:
       working-directory: cinema/cinema-challenge-back
       run: npm install
 
-    - name: Create backend .env file
-      working-directory: cinema/cinema-challenge-back
-      run: |
-        echo "PORT=3000" > .env
-        echo "MONGODB_URI=mongodb://localhost:27017/cinema-app" >> .env
 
     - name: Seed backend database with movies
       working-directory: cinema/cinema-challenge-back

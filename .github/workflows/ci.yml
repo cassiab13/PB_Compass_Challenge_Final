@@ -85,7 +85,7 @@ jobs:
     - name: Run Postman collection
       run: |
         newman run documentacao/Cinema-App.postman_collection.json\
-          --environment documentacao/Cinema-App.postman_collection.json \
+          --environment documentacao/Challenge-Cinema.postman_enviroment.json \
           --reporters cli,junit \
           --reporter-junit-export postman-results.xml
 

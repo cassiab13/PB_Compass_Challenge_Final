@@ -38,15 +38,15 @@ jobs:
 
     - name: Seed backend database with movies
       working-directory: cinema/cinema-challenge-back
-      run: node src/utils/setup-movies-db.js
+      run: node setup-movies-db.js
 
     - name: Seed backend database with test-users
       working-directory: cinema/cinema-challenge-back
-      run: node src/utils/setup-test-users.js
+      run: node setup-test-users.js
 
     - name: Seed backend database with more movies
       working-directory: cinema/cinema-challenge-back
-      run: node src/utils/seedMoreMovies.js
+      run: node setup-test-users.js
       
     - name: Start backend
       working-directory: cinema/cinema-challenge-back

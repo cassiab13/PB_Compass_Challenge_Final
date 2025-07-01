@@ -16,32 +16,32 @@ jobs:
 
     # Backend
     - name: Install backend dependencies
-      working-directory: ./cinema-challenge-backend
+      working-directory: cinema/cinema-challenge-backend
       run: npm install
 
     - name: Create backend .env file
-      working-directory: ./cinema-challenge-backend
+      working-directory: cinema/cinema-challenge-backend
       run: |
         echo "PORT=3000" > .env
         echo "MONGODB_URI=mongodb://localhost:27017/cinema-app" >> .env
 
     - name: Seed backend database
-      working-directory: ./cinema-challenge-backend
+      working-directory: cinema/cinema-challenge-backend
       run: npm run seed
 
     - name: Start backend
-      working-directory: ./cinema-challenge-backend
+      working-directory: cinema/cinema-challenge-backend
       run: |
         npm start &
         npx wait-on http://localhost:3000
 
     # Frontend
     - name: Install frontend dependencies
-      working-directory: ./cinema-challenge-frontend
+      working-directory: cinema/cinema-challenge-frontend
       run: npm install
 
     - name: Create frontend .env.local file
-      working-directory: ./cinema-challenge-frontend
+      working-directory: cinema/cinema-challenge-frontend
       run: |
         echo "VITE_API_URL=/api/v1" > .env.local
         echo "VITE_APP_ENV=development" >> .env.local
@@ -49,7 +49,7 @@ jobs:
         echo "VITE_ENABLE_ANALYTICS=false" >> .env.local
 
     - name: Start frontend
-      working-directory: ./cinema-challenge-frontend
+      working-directory: cinema/cinema-challenge-frontend
       run: |
         npm start &
         npx wait-on http://localhost:3002
@@ -65,8 +65,8 @@ jobs:
 
     - name: Run Postman collection
       run: |
-        newman run ./documentacao/sua_collection.json \
-          --environment ./documentacao/seu_ambiente.json \
+        newman run documentacao/Cinema-App.postman_collection\
+          --environment documentacao/Cinema-App.postman_collection \
           --reporters cli,junit \
           --reporter-junit-export postman-results.xml
 
@@ -79,13 +79,13 @@ jobs:
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r ./robot-framework/requirements.txt
+        pip install -r robot-framework/requirements.txt
 
     - name: Initialize Robot Framework Browser
       run: rfbrowser init
 
     - name: Run Robot Framework tests
-      run: robot ./robot-framework/tests/
+      run: robot robot-framework/tests/
 
     # Upload results
     - name: Upload Postman results

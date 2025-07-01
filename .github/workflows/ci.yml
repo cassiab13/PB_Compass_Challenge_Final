@@ -1,0 +1,101 @@
+name: CI with Backend + Frontend + Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+
+    # Backend
+    - name: Install backend dependencies
+      working-directory: ./cinema-challenge-backend
+      run: npm install
+
+    - name: Create backend .env file
+      working-directory: ./cinema-challenge-backend
+      run: |
+        echo "PORT=3000" > .env
+        echo "MONGODB_URI=mongodb://localhost:27017/cinema-app" >> .env
+
+    - name: Seed backend database
+      working-directory: ./cinema-challenge-backend
+      run: npm run seed
+
+    - name: Start backend
+      working-directory: ./cinema-challenge-backend
+      run: |
+        npm start &
+        npx wait-on http://localhost:3000
+
+    # Frontend
+    - name: Install frontend dependencies
+      working-directory: ./cinema-challenge-frontend
+      run: npm install
+
+    - name: Create frontend .env.local file
+      working-directory: ./cinema-challenge-frontend
+      run: |
+        echo "VITE_API_URL=/api/v1" > .env.local
+        echo "VITE_APP_ENV=development" >> .env.local
+        echo "VITE_ENABLE_MOCK_API=false" >> .env.local
+        echo "VITE_ENABLE_ANALYTICS=false" >> .env.local
+
+    - name: Start frontend
+      working-directory: ./cinema-challenge-frontend
+      run: |
+        npm start &
+        npx wait-on http://localhost:3002
+
+    # Setup Node.js for Newman (Postman)
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install Newman
+      run: npm install -g newman
+
+    - name: Run Postman collection
+      run: |
+        newman run ./documentacao/sua_collection.json \
+          --environment ./documentacao/seu_ambiente.json \
+          --reporters cli,junit \
+          --reporter-junit-export postman-results.xml
+
+    # Setup Python for Robot Framework
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r ./robot-framework/requirements.txt
+
+    - name: Initialize Robot Framework Browser (if used)
+      run: rfbrowser init
+
+    - name: Run Robot Framework tests
+      run: robot ./robot-framework/tests/
+
+    # Upload results
+    - name: Upload Postman results
+      uses: actions/upload-artifact@v3
+      with:
+        name: postman-results
+        path: postman-results.xml
+
+    - name: Upload Robot Framework results
+      uses: actions/upload-artifact@v3
+      with:
+        name: robotframework-results
+        path: output.xml, log.html, report.html

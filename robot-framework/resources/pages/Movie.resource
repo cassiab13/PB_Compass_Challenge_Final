@@ -8,13 +8,10 @@ Go to movie page
     Go To    ${BASE_URL}/movies
 
 Click on details movie
-    Click    xpath=//*[@id="root"]/main/div/div[2]/div[1]/div[2]/a
+    Click    ${VER_DETALHES_BTN}
 Session list exists
     ${has_session}=    Run Keyword And Return Status    Browser.Get Element   .sessions-list
-        Should Be True    ${has_session}
-
-Click on reserve seats 
-    Click    ${SELECIONAR_ASSENTOS_BTN}
+        Should Be True    ${has_session}    Este card não possui .sessions-list
 
 Verify infos from movie
     ${has_movie_meta}=    Run Keyword And Return Status    Browser.Get Element   .movie-meta

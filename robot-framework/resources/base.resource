@@ -13,6 +13,9 @@ Resource       pages/LoggedUserPage.resource
 Resource       pages/Profile.resource
 Resource       pages/Home.resource
 Resource       pages/Movie.resource
+Resource       pages/Sessions.resource
+Resource       pages/Reservation.resource
+Resource       pages/Checkout.resource
 
 *** Keywords ***
 Start Session

@@ -42,10 +42,14 @@ jobs:
       working-directory: cinema/cinema-challenge-back
       run: node setup-test-users.js
 
+    - name: Seed backend database with more movies
+      working-directory: cinema/cinema-challenge-back
+      run: node src/utils/seedMoreMovies.js
+      
     - name: Seed backend database with sessions
       working-directory: cinema/cinema-challenge-back
       run: node setup-sessions.js
-      
+
     - name: Start backend
       working-directory: cinema/cinema-challenge-back
       run: |

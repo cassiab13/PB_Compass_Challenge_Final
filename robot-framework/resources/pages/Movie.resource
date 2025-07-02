@@ -11,7 +11,7 @@ Click on details movie
     Click    xpath=//*[@id="root"]/main/div/div[2]/div[1]/div[2]/a
 Session list exists
     ${has_session}=    Run Keyword And Return Status    Browser.Get Element   .sessions-list
-        Should Be True    ${has_session}    Este card não possui .sessions-list
+        Should Be True    ${has_session}
 
 Click on reserve seats 
     Click    ${SELECIONAR_ASSENTOS_BTN}

@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation            Cenários de testes do profile de usuário
+Documentation            Cenários de testes movie page
 Resource                 ../../resources/base.resource
 Library                  ../../resources/libs/database.py
 Library                  Collections
@@ -13,6 +13,7 @@ Sessions should be available
 
     Go to movie page
     Click on details movie
+    Wait For Elements State    .movie-info    visible    10s
     Session list exists
 
 Should access seat reservation from session

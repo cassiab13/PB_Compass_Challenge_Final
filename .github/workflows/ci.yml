@@ -44,8 +44,12 @@ jobs:
 
     - name: Seed backend database with more movies
       working-directory: cinema/cinema-challenge-back
-      run: node setup-test-users.js
+      run: node src/utils/seedMoreMovies.js
       
+    - name: Seed backend database with sessions
+      working-directory: cinema/cinema-challenge-back
+      run: node setup-sessions.js
+
     - name: Start backend
       working-directory: cinema/cinema-challenge-back
       run: |
@@ -108,15 +112,7 @@ jobs:
       continue-on-error: true
       run: xvfb-run robot  robot-framework/tests/
     
-    - name: Upload Robot Framework test reports
-      uses: actions/upload-artifact@v4
-      with:
-       name: robotframework-reports
-       path: |
-            output.xml
-            report.html
-            log.html
-    # Upload results
+     # Upload results
     - name: Upload Postman results
       uses: actions/upload-artifact@v4
       with:

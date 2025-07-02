@@ -10,43 +10,42 @@ Should display logout button after successful login
     [Tags]    AUTH-003    CIN17    UI
 
     ${user}=    Create Dictionary
-    ...         name=LoginUser
-    ...         email=login@test.com
+    ...         name=Login User
+    ...         email=loginuser@test.com
     ...         password=senha123
 
-    Reset user in database    ${user}
-    Go to login page
-    Submit login              ${user}
+    Go to signup Page
+    Submit signup form              ${user}
     Wait For Elements State   css=.btn-logout    visible    5s
+    Remove user from database    ${user}[email]
 Should logout successfully
     [Tags]    AUTH-003    CIN18
     ${user}        Create Dictionary    
     ...            name=UserLogout
-    ...            email=userLogout@gmail.com 
+    ...            email=userlogout@gmail.com 
     ...            password=new123456
     
-    Reset user in database       ${user}
-    Go to login page
-    Submit login                 ${user}
+    Go to signup Page
+    Submit signup form                 ${user}
     Logout user
     Verify Login Page
+    Remove user from database           ${user}[email]
     Token should not exist in local storage
-
+    
 Should not access protected routes after logout
     [Tags]    AUTH-003    CIN19
     ${user}        Create Dictionary    
-    ...            name=UserLogout
-    ...            email=userLogout@gmail.com 
+    ...            name=User Not Access
+    ...            email=usernotaccess@gmail.com 
     ...            password=new123456
     
-    Reset user in database       ${user}
-    Go to login page
-    Submit login                 ${user}
-    Log To Console    Tentando acessar rota protegida após logout
+    Go to signup Page
+    Submit signup form                 ${user}
+    Logout user
     Go to profile page
     Wait For Elements State    ${LOGIN_MESSAGE}    visible    10s
     Verify Login Page
-
+    Remove user from database       ${user}[email]
 Should hide user menu links after logout
     [Tags]    AUTH-003    CIN21
     ${user}=    Create Dictionary
@@ -54,7 +53,6 @@ Should hide user menu links after logout
     ...         email=menuuser@test.com
     ...         password=senha123
 
-    Remove user from database    ${user}[email]
     Go to signup Page
     Submit signup form           ${user}
 
@@ -65,3 +63,4 @@ Should hide user menu links after logout
 
     Wait For Elements State      css=a[href="/reservations"]    hidden    5s
     Wait For Elements State      css=a[href="/profile"]         hidden    5s
+    Remove user from database    ${user}[email]

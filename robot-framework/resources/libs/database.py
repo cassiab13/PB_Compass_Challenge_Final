@@ -4,7 +4,7 @@ import bcrypt
 
 client = MongoClient('mongodb://localhost:27017')
 
-db = client['cinema-app2']
+db = client['cinema-app']
 
 @keyword('Remove user from database')
 def remove_user(email):

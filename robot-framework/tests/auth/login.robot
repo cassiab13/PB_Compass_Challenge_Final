@@ -13,13 +13,12 @@ Should login successfully
     ...            email=newuserlogin@gmail.com 
     ...            password=new123456
     
-    Remove user from database    ${user}[email]
     Go to signup Page
     Submit signup form           ${user}
     Go to login page
     Submit login                 ${user}
     Alert should be              Login realizado com sucesso
-
+    Remove user from database    ${user}[email]
 Should not login incorrect password
     [Tags]    AUTH-002    CIN11
     ${user}        Create Dictionary    
@@ -27,12 +26,14 @@ Should not login incorrect password
     ...            email=newuserlogin@gmail.com 
     ...            password=new123456
     
-    ${wrong_password}        Create Dictionary    
+    ${wrong_password}        Create Dictionary
+    ...            name=NewUserLogin    
     ...            email=newuserlogin@gmail.com 
     ...            password=wrongpassword 
     
-    Remove user from database    ${user}[email]
     Go to signup Page
     Submit signup form           ${user}
     Go to login page
     Submit login                 ${wrong_password}
+    Remove user from database    ${user}[email]
+    Remove user from database    ${wrong_password}[email]

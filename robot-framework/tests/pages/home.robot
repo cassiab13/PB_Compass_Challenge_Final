@@ -25,11 +25,10 @@ Should check if list of movies appear in grid form for authenticated user
     ...            email=homeuser@gmail.com 
     ...            password=new123456
     
-    Remove user from database    ${user}[email]
     Go to signup Page
     Submit signup form    ${user}
     Element Should Be a Grid    .movie-grid
-
+    Remove user from database    ${user}[email]
 Should check duration and release for authenticated user
     [Tags]         MOVIE-001    CIN42 
     

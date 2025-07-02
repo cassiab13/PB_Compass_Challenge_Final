@@ -18,7 +18,7 @@ ${INPUT_EMAIL}                css=#email
 ${SALVAR_ALTERACOES_BTN}      css=button[type=submit] >> text=Salvar alterações
 ${MODAL_OK_BUTTON}            css=.success-modal-overlay button.btn.btn-primary
 
-${VER_DETALHES_BTN}           css=.featured-movies .movie-info a >> nth=0
+${VER_DETALHES_BTN}           xpath=(//div[@class='movie-card']//a[contains(@class, 'btn-primary')])[1]
 
 ${RESERVE_SEATS_BTN}          css=.movie-info .sessions-container a >> nth=0
 ${RESET_SEATS_BTN}            css=.admin-actions button

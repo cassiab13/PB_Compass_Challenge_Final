@@ -42,7 +42,9 @@ Should not access protected routes after logout
     Reset user in database       ${user}
     Go to login page
     Submit login                 ${user}
+    Log To Console    Tentando acessar rota protegida após logout
     Go to profile page
+    Wait For Elements State    ${LOGIN_MESSAGE}    visible    10s
     Verify Login Page
 
 Should hide user menu links after logout

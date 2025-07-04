@@ -9,6 +9,7 @@ Check seat status equals occupied
     ${classe}=    Browser.Get Attribute    ${RESERVED_SEATS}    class
     Should Contain    ${classe}    occupied
 Click on reserve seats
+    Sleep    5s
     Wait For Elements State    ${RESERVE_SEATS_BTN}    visible    10s
     Click    ${RESERVE_SEATS_BTN}
 

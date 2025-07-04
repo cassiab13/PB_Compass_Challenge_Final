@@ -20,7 +20,7 @@ ${MODAL_OK_BUTTON}            css=.success-modal-overlay button.btn.btn-primary
 
 ${VER_DETALHES_BTN}           xpath=(//div[@class='movie-card']//a[contains(@class, 'btn-primary')]) >> nth=0
 
-${RESERVE_SEATS_BTN}          css=.movie-info .sessions-container a >> nth=0
+${RESERVE_SEATS_BTN}          css=.session-button >> nth=0
 ${RESET_SEATS_BTN}            css=.admin-actions button
 ${CONTINUAR_PGTO_BTN}         css=.action-buttons button
 

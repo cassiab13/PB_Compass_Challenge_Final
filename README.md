@@ -124,5 +124,15 @@ Inicia a aplicação para execução dos testes
 Gera e armazena relatórios dos testes
 Para mais detalhes, verifique o arquivo .github/workflows/ci.yml.
 
+### 👩‍💻Apresentação pessoal
+Nome: Cassia Yumi Iwamoto Basso
+Curso: Engenharia de Software
+Semestre: 8º
+Cidade: Maringá
+Cor de olhos: castanho escuro
+Cor de cabelos: preto
+Cor de pele: clara
+Tipo roupa: Calça jeans preta e Moletom cinza.
+
 #### 📱 Contato
 Para dúvidas ou contribuições, abra uma issue ou envie um pull request.

@@ -26,6 +26,11 @@ Check select method payment
     ${classe}=    Browser.Get Attribute    ${PAYMENT_METHOD}    class
     Should Contain    ${classe}    selected
 
+Check status reservation
+    Wait For Elements State    ${CONFIRMATION_RESERVATION}    visible    5s
+    ${message}=    Browser.Get Text    ${CONFIRMATION_RESERVATION}
+    Should Be Equal    ${message}    Reserva Confirmada!
+
 Click on credit card
     Click    ${CREDIT_CARD_METHOD}
 
@@ -40,3 +45,6 @@ Click on online transfer
 
 Click on checkout
     Click    ${CHECKOUT_BTN}
+
+Click on go back home page
+    Click    ${HOME_PAGE_BTN}

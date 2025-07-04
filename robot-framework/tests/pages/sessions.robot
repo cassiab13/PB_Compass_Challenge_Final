@@ -38,3 +38,14 @@ Should select seats and check price
     Click on reserve seats
     Click on reset seats
     Select three availables seats and check subtotal
+
+Should check reservation link
+    [Tags]    RESERVE-003    CIN75
+
+    ${admin}    Create Dictionary    
+    ...            email=admin@example.com 
+    ...            password=admin123
+    
+    Go to login page
+    Submit login    ${admin}
+    Check my reservation link

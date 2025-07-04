@@ -18,14 +18,15 @@ ${INPUT_EMAIL}                css=#email
 ${SALVAR_ALTERACOES_BTN}      css=button[type=submit] >> text=Salvar alterações
 ${MODAL_OK_BUTTON}            css=.success-modal-overlay button.btn.btn-primary
 
-${VER_DETALHES_BTN}           xpath=(//div[@class='movie-card']//a[contains(@class, 'btn-primary')])[1]
+${VER_DETALHES_BTN}           xpath=(//div[@class='movie-card']//a[contains(@class, 'btn-primary')]) >> nth=0
 
 ${RESERVE_SEATS_BTN}          css=.movie-info .sessions-container a >> nth=0
 ${RESET_SEATS_BTN}            css=.admin-actions button
 ${CONTINUAR_PGTO_BTN}         css=.action-buttons button
 
 ${SELECT_AVAILABLE_SEATS}     css=.row-seats .seat.available
-${RESERVED_SEATS}             css=.row-seats .seat.selected >> nth=0
+${SELECTED_SEATS}             css=.row-seats .seat.selected >> nth=0
+${RESERVED_SEATS}             css=.row-seats .seat.occupied >> nth=0
 
 ${SUBTOTAL_LABEL}             css=span.price
 
@@ -37,3 +38,14 @@ ${PIX_METHOD}                 css=.payment-method span >> text=PIX
 ${TRANSFER_METHOD}            css=.payment-method span >> text=Transferência Bancária
 ${PAYMENT_METHOD}             css=.payment-method.selected  
 ${CHECKOUT_BTN}               css=.btn-checkout
+${CONFIRMATION_RESERVATION}   css=.confirmation-header > h1
+
+${HOME_PAGE_BTN}              css=.btn-secondary
+
+${MY_RESERVATIONS_LINK}       css=a[href="/reservations"]
+${WELCOME_MESSAGE}            css=.home-container > h1
+${RESERVATION_PAGE}           css=.reservations-header h1 >> text=Minhas Reservas
+${RESERVATION_CARD}           css=.reservation-card
+
+${MOVIE_INFO}                 css=.movie-info
+${EMPTY_RESERVATION}          css=.empty-reservations > h3

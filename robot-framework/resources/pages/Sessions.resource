@@ -4,7 +4,12 @@ Documentation        Elementos e ações na página de sessions
 Resource             ../base.resource
 
 *** Keywords ***
+Check seat status equals occupied
+    Wait For Elements State    ${SELECT_AVAILABLE_SEATS} >> nth=0    visible    5s
+    ${classe}=    Browser.Get Attribute    ${RESERVED_SEATS}    class
+    Should Contain    ${classe}    occupied
 Click on reserve seats
+    Wait For Elements State    ${RESERVE_SEATS_BTN}    visible    10s
     Click    ${RESERVE_SEATS_BTN}
 
 Click on reset seats
@@ -14,6 +19,8 @@ Click on payment
     Click    ${CONTINUAR_PGTO_BTN}
 Verify session-time and session-theater
     ${total}=    Browser.Get Element Count    css=.session-card
+    
+    Wait For Elements State    .session-card >> nth=0    visible    10s
 
     FOR    ${index}    IN    ${total}
         ${time_selector}=    Set Variable    .session-card >> nth=${index} >> .session-info >> .session-time 
@@ -29,7 +36,7 @@ Select first available seat
     @{assentos}=    Browser.Get Elements    ${SELECT_AVAILABLE_SEATS}
     Browser.Click    ${assentos[0]}
     Sleep    1s
-    ${classe}=    Browser.Get Attribute    ${RESERVED_SEATS}    class
+    ${classe}=    Browser.Get Attribute    ${SELECTED_SEATS}    class
     Should Contain    ${classe}    selected
 
 Select three availables seats and check subtotal

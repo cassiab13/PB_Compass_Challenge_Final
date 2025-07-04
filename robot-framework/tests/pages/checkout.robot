@@ -46,8 +46,8 @@ Should select a payment method
     Click on online transfer
     Check select method payment
 
-Should confirm reservation
-    [Tags]    RESERVE-002    CIN70
+Should confirm and display reservation and update seat status
+    [Tags]    RESERVE-002    CIN70    CIN71    CIN72
 
     ${admin}    Create Dictionary    
     ...            email=admin@example.com 
@@ -56,4 +56,14 @@ Should confirm reservation
     Go to login page
     Submit login    ${admin}
     Click on details movie
-    
+    Click on reserve seats
+    Click on reset seats
+    Select first available seat
+    Click on payment
+    Click on credit card
+    Click on checkout
+    Check status reservation
+    Click on go back home page
+    Click on details movie
+    Click on reserve seats
+    Check seat status equals occupied

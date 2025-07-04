@@ -10,7 +10,6 @@ Check seat status equals occupied
     Should Contain    ${classe}    occupied
 Click on reserve seats
     Sleep    5s
-    Wait For Elements State    ${RESERVE_SEATS_BTN}    visible    10s
     Click    ${RESERVE_SEATS_BTN}
 
 Click on reset seats
